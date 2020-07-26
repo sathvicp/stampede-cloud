@@ -15,6 +15,7 @@ services:
       - './proxy/conf.d:/etc/nginx/conf.d:rw'
       - './proxy/vhost.d:/etc/nginx/vhost.d:rw'
       - './proxy/html:/usr/share/nginx/html:rw'
+      - './config/nginx/conf.d/max_file_size.conf:/etc/nginx/conf.d/client_max_body_size.conf:ro'
       - './proxy/certs:/etc/nginx/certs:ro'
       - '/etc/localtime:/etc/localtime:ro'
       - '/var/run/docker.sock:/tmp/docker.sock:ro'
