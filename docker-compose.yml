@@ -69,7 +69,7 @@ services:
       - './app/data:/var/www/html/data'
       - './app/themes:/var/www/html/themes'
       - '/etc/localtime:/etc/localtime:ro'
-      - './nextcloud-custom/cron.sh:/cron.sh'
+      - './nextcloud-custom/cron.sh:/cron.sh:ro'
     command: sh /cron.sh
     environment:
       - VIRTUAL_HOST=cloud.himitsu.ga
