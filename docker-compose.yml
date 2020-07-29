@@ -81,6 +81,11 @@ services:
     volumes:
       - 'nextcloud:/var/www/html'
       - '/etc/localtime:/etc/localtime:ro'
+      - './app/config:/var/www/html/config'
+      - './app/custom_apps:/var/www/html/custom_apps'
+      - './app/data:/var/www/html/data'
+      - './app/themes:/var/www/html/themes'
+
     entrypoint: /cron.sh
     depends_on:
       - db
