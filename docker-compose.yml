@@ -76,6 +76,17 @@ services:
       - OVERWRITEPROTOCOL=https
     restart: unless-stopped
 
+  cron:
+    image: 'nextcloud:latest'
+    networks:
+      - nextcloud_network
+    depends_on:
+      - app
+    volumes:
+      - 'nextcloud:/var/www/html'
+    restart: unless-stopped
+    entrypoint: /cron.sh
+
 secrets:
   mysql_root_password:
       file: mysql_root_password.txt
