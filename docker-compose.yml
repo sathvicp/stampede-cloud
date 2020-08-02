@@ -84,6 +84,10 @@ services:
       - app
     volumes:
       - 'nextcloud:/var/www/html'
+      - '/etc/localtime:/etc/localtime:ro'
+      - './app/config:/var/www/html/config:ro'
+      - './app/custom_apps:/var/www/html/custom_apps:ro'
+      - './app/themes:/var/www/html/themes:ro'
     restart: unless-stopped
     entrypoint: /cron.sh
 
